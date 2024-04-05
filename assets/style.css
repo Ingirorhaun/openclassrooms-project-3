@@ -1,0 +1,11 @@
+* {
+  color: #000;
+}
+
+.card {
+  height: 250px;
+  width: 100%;
+}
+.card img {
+  height: 66%;
+}/*# sourceMappingURL=style.css.map */
