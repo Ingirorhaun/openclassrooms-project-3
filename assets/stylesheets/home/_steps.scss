@@ -1,0 +1,52 @@
+@use "./../global/mixins";
+@use "./../global/variables";
+
+.steps{
+    padding: 23px 20px 50px;
+    ul {
+        @include mixins.flex-col;
+        padding: 5px 0 0;
+        gap: 25px;
+        list-style: none;
+        li{
+            @include mixins.flex-row-center;
+        }
+        .step-content {
+            @include mixins.flex-row;
+
+            flex-grow: 1;
+            background-color: variables.$bg-gray;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+            padding: 26.7px 0px;
+            font-weight: 500;
+            border-radius: 20px;
+            div {
+                &:first-of-type{
+                    @include mixins.flex-col-center;
+
+                    width: 20%;
+                    padding-left: 12px;
+                }
+            }
+        }
+        i {
+            font-size: 18px;
+            color: variables.$gray-dark;
+            &.fa-store{
+                color: variables.$purple-dark;
+            }
+        }
+    }
+    .circle {
+        background-color: variables.$purple-dark;
+    }
+    .step-number {
+        color: variables.$bg-gray;
+        font-size: 14.18px;
+        font-weight: 400; //it says 500 in the mock-up but looks like 400
+        text-align: center;
+        line-height: 26px;
+        margin-right: -12px;
+        z-index: 1;
+    }
+}

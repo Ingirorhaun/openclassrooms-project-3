@@ -1,0 +1,19 @@
+@use "./../global/mixins";
+@use "./../global/variables";
+
+.discover {
+    @include mixins.flex-col-center;
+
+    background-color: variables.$bg-gray;
+    padding: 39px 42px;
+    text-align: center;
+    h3{
+        margin: 0;
+    }
+    p{
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 21.09px;
+        margin: 13px 0;
+    }
+}
