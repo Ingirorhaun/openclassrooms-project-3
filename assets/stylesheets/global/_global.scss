@@ -1,0 +1,32 @@
+@use "mixins";
+@use "variables";
+
+*{
+    color: variables.$main-color;
+    font-family: 'Roboto';
+}
+
+h3 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28.13px;
+}
+
+font {
+    size: 16px;
+    line-height: 18.75;
+}
+
+body {
+    @include mixins.flex-col;
+
+    width: 100%;
+    margin: 0px;
+}
+
+.circle {
+    display: block;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+}

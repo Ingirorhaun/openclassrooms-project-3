@@ -1,0 +1,34 @@
+@use "variables";
+
+@mixin flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin flex-col-center {
+    @include flex-col;
+
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-row-center {
+    @include flex-row;
+
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin purple-gradient($attribute) {
+    #{$attribute}: linear-gradient(178deg, variables.$purple-light -21.44%, variables.$purple-dark 95.93% );
+}
+
+@mixin purple-gradient-light($attribute) {
+    #{$attribute}:linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(178deg, variables.$purple-light -21.44%, variables.$purple-dark 95.93% );
+}
+
