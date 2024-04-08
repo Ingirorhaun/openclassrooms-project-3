@@ -1,0 +1,51 @@
+@use "mixins";
+@use "variables";
+
+footer {
+    @include mixins.flex-col;
+
+    gap: 16px;
+    background-color: variables.$bg-dark-gray;
+    padding: 22px 25px;
+    margin-top: 35px;
+    * {
+        color: #fff;
+    }
+    img {
+        filter: brightness(0) saturate(100%) invert(100%);
+    }
+}
+
+.footer-title {
+    font-family: "Shrikhand";
+    font-weight: 400;
+    //font-style: italic; //the mock up says the font is italic but it looks regular
+    font-size: 18px;
+    line-height: 26.24px;
+    color:#fff;
+    margin: 0;
+    height: 27px
+}
+
+.footer-content {
+    @include mixins.flex-col;
+    
+    gap: 7px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+        height: 20px;
+        i {
+            font-size: 12px;
+            margin-right: 11px;
+        }
+    }
+    li:nth-child(1), li:nth-child(2) {
+        font-weight: 500;
+        height: 19px;
+    }
+    a {
+        text-decoration: none;
+    }
+}
