@@ -32,3 +32,24 @@
     #{$attribute}:linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(178deg, variables.$purple-light -21.44%, variables.$purple-dark 95.93% );
 }
 
+
+@mixin heart-icon-style {
+    margin-right: 22px;
+        font-size: 22px;
+        transform: scaleX(0.9);
+        cursor: pointer;
+        i {
+            color:#fff;
+            text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000; //4 different shadows, one in each direction to simulate a border
+            
+            &:hover{
+                font-size: 23px;
+                text-shadow: none;
+                color:transparent;
+                -webkit-background-clip: text;
+                -moz-background-clip: text;
+                background-clip: text;
+                animation: fillAnimation 0.2s forwards;
+            }
+        }
+}

@@ -33,6 +33,11 @@
             flex-grow: 1;
         }
 
+        figure {
+            width: 100%;
+            margin: 0;
+        }
+
         img {
             width: 100%;
             object-fit: cover;
@@ -86,25 +91,8 @@
         line-height: 19.92px;
     }
 
-    .card-icon {
-        margin-right: 22px;
-        font-size: 22px;
-        transform: scaleX(0.9);
-        cursor: pointer;
-        i {
-            color:#fff;
-            text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000; //4 different shadows, one in each direction to simulate a border
-            
-            &:hover{
-                font-size: 23px;
-                text-shadow: none;
-                color:transparent;
-                -webkit-background-clip: text;
-                -moz-background-clip: text;
-                background-clip: text;
-                animation: fillAnimation 0.2s forwards;
-            }
-        }
+    .like-icon {
+        @include mixins.heart-icon-style;
     }
 }
 

@@ -1,0 +1,169 @@
+@use "./../global/mixins";
+@use "./../global/variables";
+
+main {
+    .hero-image{
+        height: 275px;
+        overflow: hidden;
+
+        img {
+            height: 100%;
+        }
+    }
+
+    section.menu{
+        @include mixins.flex-col;
+
+        gap: 40px;
+        margin-top: -55px;
+        padding-top: 32px;
+        background-color: variables.$bg-gray;
+        border-radius: 40px;
+        position: relative;
+        .restaurant-name{
+            @include mixins.flex-row;
+
+            align-items: center;
+            padding: 0px 17px;
+            h3 {
+                font-family: "Shrikhand";
+                font-weight: 400;
+                font-size: 28px;
+                line-height: 40.82px;
+                margin: 0;
+            }
+            .like-icon {
+                @include mixins.heart-icon-style;
+
+                margin-left: auto;
+                margin-right: 24px;
+                margin-bottom: 3px;
+
+                i{
+                    color: variables.$bg-gray;
+                }
+            }
+        }
+
+        .card-group {
+            @include mixins.flex-col;
+
+            gap: 12px;
+            padding: 0px 13px;
+            h4 {
+                margin: 0;
+                text-transform: uppercase;
+                font-weight: 300;
+            }
+
+            .line {
+                width: 40px;
+                border-top: 2px solid variables.$tertiary-color;
+                border-bottom: 1px solid variables.$tertiary-color;
+                margin-top: 4px;
+                box-sizing: border-box;
+            }
+
+            ul {
+                @include mixins.flex-col;
+
+                gap: 12px;
+                margin: 0;
+                list-style: none;
+                padding: 0;
+
+            }
+
+            li {
+                @include mixins.flex-row;
+
+                justify-content: space-between;
+                align-items: center;
+                border-radius: 15.04px;
+                background-color: #fff;
+                height: 69px;
+                box-shadow: 0px 4.01px 15.04px 0px rgba(0,0,0,0.1);
+                overflow: hidden;
+
+                &:hover {
+                    .select-check{
+                        width: 59px;
+                    }
+                    .plate {
+                        width: calc(100% - 89px);
+                    }
+                }
+            }
+
+        }
+            
+        .plate {
+            @include mixins.flex-col;
+            justify-content: center;
+
+            $max-w: 287px;
+            width: 100%;
+            padding: 0 15px;
+            transition: width 0.5s;
+
+            .name {
+                font-weight: 500;
+                font-size: 18px;
+                max-width: $max-w;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+            .description-wrapper {
+                @include mixins.flex-row;
+                
+                justify-content: space-between;
+            }
+
+            .description {
+                max-width: $max-w;
+                margin-top: 5px;
+                font-weight: 300;
+                font-size: 15.04px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+        }
+
+        .price {
+            align-self:flex-end;
+            font-weight: 700;
+            font-size: 15.04px;
+            //padding-bottom: 12px;
+        }
+
+        .select-check {
+            flex: none;
+            width: 0px;
+            height: 100%;
+            overflow: hidden;
+            background-color: variables.$tertiary-color;
+            border-radius: 0 15px 15px 0;
+            text-align: center;
+            line-height: 69px;
+            font-size: 20px;
+            transition: width 0.5s;
+
+            i{
+                color:#fff;
+            }
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .btn {
+            margin: 0 auto 5px;
+            width: 141px;
+            text-align: center;
+        }
+    }
+    
+}
