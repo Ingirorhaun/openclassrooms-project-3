@@ -8,6 +8,10 @@
         margin-bottom: 20px;
     }
 
+    a {
+        text-decoration: none;
+    }
+
     .card-group {
         @include mixins.flex-col;
 
