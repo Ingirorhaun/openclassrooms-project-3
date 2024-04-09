@@ -1,3 +1,6 @@
+@use "./../global/variables";
+@use "./../global/mixins";
+
 .card {
     height: 250px;
     width: 100%;
@@ -6,4 +9,61 @@
     }
 }
         
+.loader-wrapper {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: #fff;
+    overflow: hidden;
+    animation: hide 0.5s forwards;
+    animation-delay: 2.5s;
+}
 
+.loader {
+    text-align: center;
+    font-size: 26px;
+    animation: move 1s forwards;
+    animation-delay: 2.5s;
+    width: 100%;
+    position:absolute;
+    top: calc(50% - 19px);
+    font-family: "Shrikhand";
+    color: variables.$logo-black;
+    animation: hide 1ms forwards;
+    animation-delay: 2s;
+
+    .load-bar {
+        width: 145px;
+        background-color: variables.$bg-gray;
+        height: 2px;
+        margin: 0 auto;
+
+        .load-bar-filling {
+            height: 100%;
+            background-color: variables.$tertiary-color;
+            animation: increaseWidth 2s forwards;
+        }
+    }
+  }
+
+
+    @keyframes increaseWidth {
+        0% {
+            width: 0%;
+        }
+        100% {
+            width: 100%;
+        }
+    }
+
+    @keyframes hide {
+        0% {
+            visibility: hidden;
+        }
+        100% {
+            visibility: hidden;
+        }
+    }
