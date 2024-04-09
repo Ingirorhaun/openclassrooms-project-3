@@ -11,7 +11,7 @@ main {
         }
     }
 
-    section.menu{
+    .menu{
         @include mixins.flex-col;
 
         gap: 40px;
@@ -20,6 +20,7 @@ main {
         background-color: variables.$bg-gray;
         border-radius: 40px;
         position: relative;
+        
         .restaurant-name{
             @include mixins.flex-row;
 
@@ -50,6 +51,20 @@ main {
 
             gap: 12px;
             padding: 0px 13px;
+            transition: 1s ease all;
+
+            $initial-delay: 0s;
+            $increase-delay: .15s;
+            $total-cards: 4;
+                        
+            @for $i from 2 through $total-cards {
+                &:nth-child(#{$i}) {
+                $zero-i: $i - 1;
+                animation: slideIn 1s forwards;
+                animation-delay: #{ $initial-delay + $zero-i * $increase-delay };  
+                }
+            }
+
             h4 {
                 margin: 0;
                 text-transform: uppercase;
@@ -84,7 +99,7 @@ main {
                 height: 69px;
                 box-shadow: 0px 4.01px 15.04px 0px rgba(0,0,0,0.1);
                 overflow: hidden;
-
+                
                 &:hover {
                     .select-check{
                         width: 59px;
@@ -166,4 +181,14 @@ main {
         }
     }
     
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
 }
