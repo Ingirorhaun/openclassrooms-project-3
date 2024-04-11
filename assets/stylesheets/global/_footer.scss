@@ -1,5 +1,6 @@
 @use "mixins";
 @use "variables";
+@use "sass:map";
 
 footer {
     @include mixins.flex-col;
@@ -8,6 +9,16 @@ footer {
     background-color: variables.$bg-dark-gray;
     padding: 22px 25px;
     margin-top: 35px;
+    max-height: 186px;
+
+    @media (min-width: map.get(variables.$grid-breakpoints, "md")) {
+        margin-top: 30px;
+        flex-direction: row-reverse;
+        align-items: flex-end;
+        padding: 30px 25px;
+        height: 54px;
+    }
+
     * {
         color: #fff;
     }
@@ -24,7 +35,14 @@ footer {
     line-height: 26.24px;
     color:#fff;
     margin: 0;
-    height: 27px
+    height: 27px;
+
+    @media (min-width: map.get(variables.$grid-breakpoints, "md")) {
+        height: auto;
+        line-height: normal;
+        margin-right: 40px;
+        margin-left: 78px;
+    }
 }
 
 .footer-content {
@@ -34,16 +52,29 @@ footer {
     list-style: none;
     margin: 0;
     padding: 0;
+    max-height: 99px;
+
+    @media (min-width: map.get(variables.$grid-breakpoints, "md")) {
+        @include mixins.flex-row;
+
+        align-items: flex-end;
+        gap: 14px;
+        
+        li:nth-child(2) {
+            margin-right: 30px;
+        }
+    }
+
     li {
         height: 20px;
         i {
             font-size: 12px;
             margin-right: 11px;
+            vertical-align: middle;
         }
     }
     li:nth-child(1), li:nth-child(2) {
         font-weight: 500;
-        height: 19px;
     }
     a {
         text-decoration: none;

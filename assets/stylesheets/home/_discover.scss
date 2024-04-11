@@ -1,5 +1,6 @@
 @use "./../global/mixins";
 @use "./../global/variables";
+@use "sass:map";
 
 .discover {
     @include mixins.flex-col-center;
@@ -7,13 +8,37 @@
     background-color: variables.$bg-gray;
     padding: 39px 42px;
     text-align: center;
+
+    @media (min-width: map.get(variables.$grid-breakpoints, "md")) {
+        height: 179px;
+        padding: 30px;
+        justify-content: space-between;
+    }
+
     h3{
         margin: 0;
+
+        @media (min-width: map.get(variables.$grid-breakpoints, "md")) {
+            font-size: 40px;
+            margin-top: 9px;
+        }
     }
     p{
         font-weight: 300;
         font-size: 18px;
         line-height: 21.09px;
         margin: 13px 0;
+
+        @media (min-width: map.get(variables.$grid-breakpoints, "md")) {
+            margin: 10px 0 0;
+        }
+    }
+
+    .btn {
+        margin: 16px 0 19px;
+
+        @media (min-width: map.get(variables.$grid-breakpoints, "md")) {
+            margin: 0;
+        }
     }
 }

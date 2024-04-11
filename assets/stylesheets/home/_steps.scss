@@ -1,16 +1,39 @@
 @use "./../global/mixins";
 @use "./../global/variables";
+@use "sass:map";
 
 .steps{
     padding: 23px 20px 52px;
     background-color: #fff;
+
+    @media (min-width: map.get(variables.$grid-breakpoints, "md")){
+        padding: 50px 20px 33px;
+
+        .section-title {
+            margin-top: 0;
+        }
+    }
+
+    >div {
+        max-width: map.get(variables.$grid-breakpoints, "lg");
+        margin-right: auto;
+        margin-left: auto;
+    }
+
     ul {
-        @include mixins.flex-col;
+        @include mixins.flex-col-center;
+        
         padding: 5px 0 0;
         gap: 25px;
         list-style: none;
+
+        @media (min-width: map.get(variables.$grid-breakpoints, "lg")) {
+            @include mixins.flex-row-center;
+        }
+
         li{
             @include mixins.flex-row-center;
+            width: 100%;
         }
         .step-content {
             @include mixins.flex-row;
@@ -21,6 +44,8 @@
             padding: 26.7px 0px;
             font-weight: 500;
             border-radius: 20px;
+            width: 100%;
+            max-width: 322.49px;
             div {
                 &:first-of-type{
                     @include mixins.flex-col-center;

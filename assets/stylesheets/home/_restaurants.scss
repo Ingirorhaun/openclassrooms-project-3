@@ -1,11 +1,19 @@
 @use "./../global/mixins";
 @use "./../global/variables";
+@use "sass:map";
 
 .restaurants {
     padding: 30px 17px;
+    max-width: map.get(variables.$grid-breakpoints, "lg");
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (min-width: map.get(variables.$grid-breakpoints, "lg")) {
+        padding: 6px 0 0;
+    }
 
     .section-title {
-        margin-bottom: 20px;
+        margin-bottom: 28px;
     }
 
     a {
@@ -13,9 +21,16 @@
     }
 
     .card-group {
-        @include mixins.flex-col;
+        @include mixins.flex-col-center;
 
         gap: 18px;
+
+        @media (min-width: 1080px) {
+            @include mixins.flex-row-center;
+            flex-wrap: wrap;
+            column-gap: 100px;
+            row-gap: 50px;
+        }
     }
     .card {
         @include mixins.flex-col;
@@ -24,6 +39,11 @@
         background-color: #fff;
         height: 251px;
         overflow: hidden;
+        max-width: 490px;
+
+        @media (min-width: map.get(variables.$grid-breakpoints, "lg")) {
+            min-width: 490px;
+        }
 
         .card-content {
             @include mixins.flex-row;
