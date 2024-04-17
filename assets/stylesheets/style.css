@@ -103,12 +103,10 @@ footer {
   gap: 16px;
   background-color: #353535;
   padding: 22px 25px;
-  margin-top: 35px;
   max-height: 186px;
 }
-@media (min-width: 768px) {
+@media (min-width: 1080px) {
   footer {
-    margin-top: 30px;
     flex-direction: row-reverse;
     align-items: flex-end;
     padding: 30px 25px;
@@ -131,7 +129,7 @@ footer img {
   margin: 0;
   height: 27px;
 }
-@media (min-width: 768px) {
+@media (min-width: 1080px) {
   .footer-title {
     height: auto;
     line-height: normal;
@@ -149,7 +147,7 @@ footer img {
   padding: 0;
   max-height: 99px;
 }
-@media (min-width: 768px) {
+@media (min-width: 1080px) {
   .footer-content {
     display: flex;
     flex-direction: row;
@@ -380,18 +378,24 @@ footer img {
 }
 
 .restaurants {
-  padding: 30px 17px;
-  max-width: 1080px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #F6F6F6;
+  padding: 30px 17px 65px 17px;
   margin-left: auto;
   margin-right: auto;
 }
 @media (min-width: 1080px) {
   .restaurants {
-    padding: 6px 0 0;
+    padding: 6px 0 30px;
   }
 }
 .restaurants .section-title {
   margin-bottom: 28px;
+  width: 100%;
+  max-width: 1080px;
 }
 .restaurants a {
   text-decoration: none;
@@ -402,6 +406,7 @@ footer img {
   justify-content: center;
   align-items: center;
   gap: 18px;
+  max-width: 1080px;
 }
 @media (min-width: 1080px) {
   .restaurants .card-group {
@@ -553,6 +558,9 @@ footer img {
   text-align: center;
 }
 
+main {
+  background-color: #fff;
+}
 main .hero-image {
   height: 275px;
   overflow: hidden;
@@ -563,28 +571,45 @@ main .hero-image img {
   -o-object-fit: cover;
      object-fit: cover;
 }
+@media (min-width: 768px) {
+  main .hero-image {
+    height: 383px;
+  }
+}
 main .menu {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 40px;
   margin-top: -55px;
+  margin-left: auto;
+  margin-right: auto;
   padding-top: 32px;
+  padding-bottom: 30px;
   background-color: #F6F6F6;
-  border-radius: 40px;
+  border-radius: 40px 40px 0 0;
+  max-width: 1055px;
   position: relative;
+}
+main .menu .restaurant-name, main .menu .card-group {
+  max-width: 634px;
+  width: calc(100% - 26px);
+  padding: 0 13px;
 }
 main .menu .restaurant-name {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
-  padding: 0px 17px;
 }
 main .menu .restaurant-name h3 {
   font-family: "Shrikhand";
   font-weight: 400;
   font-size: 28px;
   line-height: 40.82px;
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 main .menu .restaurant-name .like-icon {
   margin-right: 22px;
@@ -608,6 +633,12 @@ main .menu .restaurant-name .like-icon i:hover {
   background-clip: text;
   animation: fillAnimation 0.2s forwards;
 }
+@media (min-width: 768px) {
+  main .menu .restaurant-name .like-icon {
+    margin-left: 24px;
+    margin-right: 0;
+  }
+}
 main .menu .restaurant-name .like-icon i {
   color: #F6F6F6;
 }
@@ -615,7 +646,6 @@ main .menu .card-group {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  padding: 0px 13px;
   transition: 1s ease all;
 }
 main .menu .card-group:nth-child(2) {
@@ -674,6 +704,7 @@ main .menu .plate {
   width: 100%;
   padding: 0 15px;
   transition: width 0.5s;
+  cursor: pointer;
 }
 main .menu .plate .name {
   font-weight: 500;
@@ -724,6 +755,12 @@ main .menu .btn {
   margin: 0 auto 5px;
   width: 141px;
   text-align: center;
+}
+@media (min-width: 768px) {
+  main .menu {
+    margin-top: -40px;
+    padding-bottom: 30px;
+  }
 }
 
 @keyframes slideIn {

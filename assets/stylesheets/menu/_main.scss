@@ -1,7 +1,11 @@
 @use "./../global/mixins";
 @use "./../global/variables";
+@use "sass:map";
 
 main {
+
+    background-color: #fff;
+
     .hero-image{
         height: 275px;
         overflow: hidden;
@@ -11,29 +15,45 @@ main {
             width: 100%;
             object-fit: cover;
         }
+
+        @media (min-width: map.get(variables.$grid-breakpoints, "md")) {
+            height: 383px;
+        }
     }
 
     .menu{
-        @include mixins.flex-col;
+        @include mixins.flex-col-center;
 
         gap: 40px;
         margin-top: -55px;
+        margin-left: auto;
+        margin-right: auto;
         padding-top: 32px;
+        padding-bottom: 30px;
         background-color: variables.$bg-gray;
-        border-radius: 40px;
+        border-radius: 40px 40px 0 0;
+        max-width: 1055px;
         position: relative;
+
+        .restaurant-name, .card-group {
+            max-width: 634px;
+            width: calc(100% - 26px);
+            padding: 0 13px;
+        }
         
         .restaurant-name{
             @include mixins.flex-row;
 
+            justify-content: center;
             align-items: center;
-            padding: 0px 17px;
+
             h3 {
                 font-family: "Shrikhand";
                 font-weight: 400;
                 font-size: 28px;
                 line-height: 40.82px;
-                margin: 0;
+                margin-top: 0;
+                margin-bottom: 0;
             }
             .like-icon {
                 @include mixins.heart-icon-style;
@@ -41,6 +61,11 @@ main {
                 margin-left: auto;
                 margin-right: 24px;
                 margin-bottom: 3px;
+
+                @media (min-width: map.get(variables.$grid-breakpoints, "md")) {
+                    margin-left: 24px;
+                    margin-right: 0;
+                }
 
                 i{
                     color: variables.$bg-gray;
@@ -52,13 +77,12 @@ main {
             @include mixins.flex-col;
 
             gap: 12px;
-            padding: 0px 13px;
             transition: 1s ease all;
 
             $initial-delay: 0s;
             $increase-delay: .15s;
             $total-cards: 4;
-                        
+
             @for $i from 2 through $total-cards {
                 &:nth-child(#{$i}) {
                 $zero-i: $i - 1;
@@ -122,6 +146,7 @@ main {
             width: 100%;
             padding: 0 15px;
             transition: width 0.5s;
+            cursor: pointer;
 
             .name {
                 font-weight: 500;
@@ -180,6 +205,11 @@ main {
             margin: 0 auto 5px;
             width: 141px;
             text-align: center;
+        }
+
+        @media (min-width: map.get(variables.$grid-breakpoints, "md")){
+            margin-top: -40px;
+            padding-bottom: 30px;
         }
     }
     

@@ -3,17 +3,22 @@
 @use "sass:map";
 
 .restaurants {
-    padding: 30px 17px;
-    max-width: map.get(variables.$grid-breakpoints, "lg");
+    @include mixins.flex-col-center;
+
+    background-color: variables.$bg-gray;
+    padding: 30px 17px 65px 17px;
     margin-left: auto;
     margin-right: auto;
 
     @media (min-width: map.get(variables.$grid-breakpoints, "lg")) {
-        padding: 6px 0 0;
+        padding: 6px 0 30px;
     }
 
     .section-title {
         margin-bottom: 28px;
+        width: 100%;
+        max-width: map.get(variables.$grid-breakpoints, "lg");
+
     }
 
     a {
@@ -24,6 +29,7 @@
         @include mixins.flex-col-center;
 
         gap: 18px;
+        max-width: map.get(variables.$grid-breakpoints, "lg");
 
         @media (min-width: 1080px) {
             @include mixins.flex-row-center;
