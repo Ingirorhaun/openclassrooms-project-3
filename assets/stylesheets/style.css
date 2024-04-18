@@ -488,7 +488,7 @@ footer img {
   font-size: 18px;
   font-weight: 700;
   line-height: 21.09px;
-  margin-bottom: 5px;
+  margin: 0 0 5px 0;
 }
 .restaurants .card-subtitle {
   font-size: 17px;
