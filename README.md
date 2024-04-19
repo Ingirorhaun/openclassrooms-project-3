@@ -1,1 +1,1 @@
-Repository for Openclassroom's JavaScript React Developer project #3: *Integrate a mobile website with animations in CSS*
+Repository for Openclassrooms Javascript React Developer project #3: *Integrate a mobile website with animations in CSS*
