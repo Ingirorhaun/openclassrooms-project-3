@@ -85,6 +85,7 @@ main {
 
             @for $i from 2 through $total-cards {
                 &:nth-child(#{$i}) {
+                visibility: hidden;
                 $zero-i: $i - 1;
                 animation: slideIn 1s forwards;
                 animation-delay: #{ $initial-delay + $zero-i * $increase-delay };  
@@ -217,10 +218,12 @@ main {
 
 @keyframes slideIn {
     0% {
+        visibility: visible;
         transform: translateX(-100%);
     }
 
     100% {
+        visibility: visible;
         transform: translateX(0%);
     }
 }

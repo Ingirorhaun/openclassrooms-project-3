@@ -645,14 +645,17 @@ main .menu .card-group {
   transition: 1s ease all;
 }
 main .menu .card-group:nth-child(2) {
+  visibility: hidden;
   animation: slideIn 1s forwards;
   animation-delay: 0.15s;
 }
 main .menu .card-group:nth-child(3) {
+  visibility: hidden;
   animation: slideIn 1s forwards;
   animation-delay: 0.3s;
 }
 main .menu .card-group:nth-child(4) {
+  visibility: hidden;
   animation: slideIn 1s forwards;
   animation-delay: 0.45s;
 }
@@ -761,9 +764,11 @@ main .menu .btn {
 
 @keyframes slideIn {
   0% {
+    visibility: visible;
     transform: translateX(-100%);
   }
   100% {
+    visibility: visible;
     transform: translateX(0%);
   }
 }/*# sourceMappingURL=style.css.map */
